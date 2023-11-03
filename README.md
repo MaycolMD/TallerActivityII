@@ -36,12 +36,12 @@ Se realizará la imputación de valores faltantes en los conjuntos de datos util
 
 # Preguntas
 
-- Gasto Promedio: ¿Cuál es el gasto promedio en "Vino Tinto" en las tiendas Olimpica y EXITO?
-Para calccular el gasto promedio de "Vino Tinto" se uso un código SQL que usa dos vistas temporales para extraer los códigos y precios de productos que contienen la cadena "Vino Tinto" de las tablas "Olimpica_IMP" y "Exito", respectivamente despues se crea una vista temporal que combina los resultados de las vistas "Vino_Tinto_OLI" y "Vino_Tinto_EXI" utilizando la operación "UNION ALL" dando como resultado un conjunto de datos que contiene todos los productos "Vino Tinto" con sus códigos y precios de ambas tiendas una vez hecho eso se crea una vista temporal que realiza un conteo de la cantidad de compras por producto en la tabla "Compras". Esto proporciona información sobre cuántas veces se ha comprado cada producto.
+## 1. Gasto Promedio: ¿Cuál es el gasto promedio en "Vino Tinto" en las tiendas Olimpica y EXITO?
+Para calcular el gasto promedio de "Vino Tinto" se uso un código SQL que usa dos vistas temporales para extraer los códigos y precios de productos que contienen la cadena "Vino Tinto" de las tablas "Olimpica_IMP" y "Exito", respectivamente despues se crea una vista temporal que combina los resultados de las vistas "Vino_Tinto_OLI" y "Vino_Tinto_EXI" utilizando la operación "UNION ALL" dando como resultado un conjunto de datos que contiene todos los productos "Vino Tinto" con sus códigos y precios de ambas tiendas una vez hecho eso se crea una vista temporal que realiza un conteo de la cantidad de compras por producto en la tabla "Compras". Esto proporciona información sobre cuántas veces se ha comprado cada producto.
 
 Se continua con la creacion de una vista temporal que realiza un JOIN entre las vistas "Vino_Tinto_PROD" y "Compras_AGG" utilizando el campo "producto". También calcula el total gastado en cada producto multiplicando la cantidad de compras por el precio. Además, determina el almacén ("Olimpica" o "EXITO") al que pertenece cada producto según el código, finalmente se realiza un cálculo del gasto promedio por almacén utilizando operaciones de ventana. Para cada fila en "Por_Almacen", se calcula el gasto promedio utilizando la función SUM(total) OVER (particion_almacen) para sumar el gasto total en productos en el mismo almacén y la función SUM(cantidad) OVER (particion_almacen) para sumar la cantidad total de compras en productos en el mismo almacén. Esto se hace en una partición definida por el almacén.
 
-- Principales Compradores: ¿Quiénes son los compradores destacados en las tiendas Olimpica y EXITO?
+## 2. Principales Compradores: ¿Quiénes son los compradores destacados en las tiendas Olimpica y EXITO?
 
 Para responder esta pregunta se utilizo un código SQL el caul calcula el total de compras realizadas por cada cliente en las tiendas Olimpica y Exito, y presenta los resultados para los 20 principales clientes con las compras más altas. 
 
@@ -51,9 +51,10 @@ Luego, se crea otra consualta llamada "Ventas" que se utiliza para unir los dato
 
 Finalmente, se realiza la consulta principal. Calcula la suma total de compras ("SUM(v.Precio)") para cada cliente ("v.cliente") en la CTE "Ventas". Luego, los resultados se agrupan por cliente utilizando la cláusula "GROUP BY". El resultado muestra el total de compras para cada cliente y se ordena en orden descendente ("ORDER BY Compras_Totales DESC") para identificar a los 20 principales clientes con las compras más altas.
 
-- Clientes Únicos de Olimpica: ¿Quiénes son los clientes que han realizado compras específicamente en Olimpica pero no en EXITO?
-- Productos Populares: ¿Cuáles son los productos principales que las personas compran con frecuencia?
-- Artículos no Comprados: ¿Qué artículos nunca han sido comprados por los clientes?
+## 3. Clientes Únicos de Olimpica: ¿Quiénes son los clientes que han realizado compras específicamente en Olimpica pero no en EXITO?
+## 4. Productos Populares: ¿Cuáles son los productos principales que las personas compran con frecuencia?
+
+## 5. Artículos no Comprados: ¿Qué artículos nunca han sido comprados por los clientes?
 
 Para abordar esta pregunta, se comprendió primero que nada los artículos nunca comprados por los clientes como aquellos productos con 0 apariciones en la tabla Compras, que conforman el histórico de compras de los almacenes.
 Es por esto que para el desarrollo de la pregunta: 
