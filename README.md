@@ -36,11 +36,11 @@ Se realizará la imputación de valores faltantes en los conjuntos de datos util
 
 ### 4. Respuestas a Preguntas
 
-- Gasto Promedio: ¿Cuál es el gasto promedio en "Vino Tinto" en las tiendas Olimpica y EXITO?
-- Principales Compradores: ¿Quiénes son los compradores destacados en las tiendas Olimpica y EXITO?
-- Clientes Únicos de Olimpica: ¿Quiénes son los clientes que han realizado compras específicamente en Olimpica pero no en EXITO?
-- Productos Populares: ¿Cuáles son los productos principales que las personas compran con frecuencia?
-## 5 Artículos no Comprados: ¿Qué artículos nunca han sido comprados por los clientes?
+## 1. Gasto Promedio: ¿Cuál es el gasto promedio en "Vino Tinto" en las tiendas Olimpica y EXITO?
+## 2. Principales Compradores: ¿Quiénes son los compradores destacados en las tiendas Olimpica y EXITO?
+## 3. Clientes Únicos de Olimpica: ¿Quiénes son los clientes que han realizado compras específicamente en Olimpica pero no en EXITO?
+## 4. Productos Populares: ¿Cuáles son los productos principales que las personas compran con frecuencia?
+## 5. Artículos no Comprados: ¿Qué artículos nunca han sido comprados por los clientes?
 
 Para abordar esta pregunta, se comprendió primero que nada los artículos nunca comprados por los clientes como aquellos productos con 0 apariciones en la tabla Compras, que conforman el histórico de compras de los almacenes.
 Es por esto que para el desarrollo de la pregunta: 
