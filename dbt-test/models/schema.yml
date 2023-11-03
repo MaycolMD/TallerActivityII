@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: almacen
+    database: mineria-202330
+    tables:
+      - name: Clientes_NEW
+        description: tabla con la información del cliente

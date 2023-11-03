@@ -1,0 +1,2 @@
+CREATE OR REPLACE TABLE `mineria202330e.TA2.Clientes` AS
+SELECT * FROM `mineria202330e.TA2.Clientes_EXT`
