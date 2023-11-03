@@ -34,7 +34,7 @@ Se realizará la imputación de valores faltantes en los conjuntos de datos util
 #### 2. Al analizar la salida de dbt, se observa que únicamente la tabla Olímpica necesita imputación. 
 #### 3. Luego, se realiza la imputación de los valores faltantes por la mediana. En este caso, habían 3 productos en la tabla Olímpica con Precio nulo. Se halló la mediana de todos los Precios de los productos y se imputó en los Precios faltantes. 
 
-### 4. Respuestas a Preguntas
+# 4. Preguntas
 
 ## 1. Gasto Promedio: ¿Cuál es el gasto promedio en "Vino Tinto" en las tiendas Olimpica y EXITO?
 ## 2. Principales Compradores: ¿Quiénes son los compradores destacados en las tiendas Olimpica y EXITO?
