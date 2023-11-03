@@ -1,8 +1,34 @@
 version: 2
 
 sources:
-  - name: almacen
-    database: mineria-202330
+  - name: Supermarket
+    database: talleractivity2
     tables:
-      - name: Clientes_NEW
-        description: tabla con la información del cliente
+      - name: Clientes_EXT
+        description: Vista externa, proveniente de Google Sheets, con la información de los clientes. 
+      - name: Compras_EXT
+        description: Vista externa, proveniente de Google Drive, con la información histórica de compras. 
+      - name: Exito_EXT
+        description: Vista externa, proveniente de Google Sheets, con la información de los productos de Éxito.
+      - name: Olimpica_EXT
+        description: Vista externa, proveniente de Google Sheets, con la información de los productos de Olímpica.
+
+models:
+  - name: Olimpica
+    description: "Transformación de vista externa a tabla cargada en BQ de la tabla con los productos de Olímpica"
+    columns:
+      - name: Codigo
+        description: "Clave primaria. Código único de cada producto"
+      - name: Producto
+        description: "Descripción del producto. Información relacionada."
+      - name: Cantidad
+        description: "Cantidad del producto"
+      - name: Unidad
+        description: "Unidad de medida del producto"
+      - name: Precio
+        description: "Precio del producto"
+
+
+      
+        
+        
