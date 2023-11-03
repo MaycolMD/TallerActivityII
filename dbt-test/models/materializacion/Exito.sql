@@ -1,0 +1,1 @@
+SELECT * FROM {{ source('Supermarket', 'Exito_EXT') }}

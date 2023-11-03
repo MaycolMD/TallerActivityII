@@ -12,7 +12,6 @@ sources:
         description: Vista externa, proveniente de Google Sheets, con la información de los productos de Éxito.
       - name: Olimpica_EXT
         description: Vista externa, proveniente de Google Sheets, con la información de los productos de Olímpica.
-
 models:
   - name: Olimpica
     description: "Transformación de vista externa a tabla cargada en BQ de la tabla con los productos de Olímpica"
@@ -28,7 +27,73 @@ models:
       - name: Precio
         description: "Precio del producto"
 
+  - name: Exito
+    description: "Transformación de vista externa a tabla cargada en BQ de la tabla con los productos de Exito"
+    columns:
+      - name: Codigo
+        description: "Clave primaria. Código único de cada producto"
+      - name: Producto
+        description: "Descripción del producto. Información relacionada."
+      - name: Cantidad
+        description: "Cantidad del producto"
+      - name: Unidad
+        description: "Unidad de medida del producto"
+      - name: Precio
+        description: "Precio del producto"
 
-      
-        
-        
+  - name: Clientes
+    description: "Transformación de vista externa a tabla cargada en BQ con la información de los clientes"
+    columns:
+      - name: Codigo
+        description: "Clave primaria. Código único de cada cliente"
+      - name: Apellido
+        description: "Apellido del cliente"
+      - name: Nombre
+        description: "Nombre del cliente"
+      - name: Email
+        description: "Dirección de correo electrónico del cliente"
+      - name: Celular
+        description: "Número de celular del cliente"
+      - name: Edad
+        description: "Edad del cliente"
+      - name: Latitud
+        description: "Latitud de la ubicación del cliente"
+      - name: Longitud
+        description: "Longitud de la ubicación del cliente"
+
+  - name: Compras
+    description: "Transformación de vista externa a tabla cargada en BQ con el histórico de Compras en ambos almacenes"
+    columns:
+      - name: cliente
+        description: "Código de cliente que efectuó la compra"
+      - name: producto
+        description: "Código de producto de la compra"
+      - name: fecha
+        description: "Fecha de la compra"
+
+  - name: comprobacion
+    description: "Comprueba si la tabla actual contiene campos nulos en alguna de sus columnas"
+
+  - name: cantidadTotal
+    description: "Suma la cantidad de productos en la tabla Olimpica, referente a los productos de Olimpica"
+    
+  - name: rowId
+    description: "Agrega un id único a cada producto"
+    
+  - name: median
+    description: "Cálculo de la mediana"
+
+  - name: Olimpica_IMP
+    description: "Imputación por la mediana"
+    
+  - name: compras
+    description: "Total de tabla compras"
+  
+  - name: productosExito
+    description: "Total de productos de Éxito con su información"
+  
+  - name: productosOlimpica
+    description: "Total de productos de Olímpica con su información"
+
+  - name: productos
+    description: "Total de productos de ambas tiendas con su información"
