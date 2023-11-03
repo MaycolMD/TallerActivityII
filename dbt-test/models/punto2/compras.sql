@@ -1,4 +1,2 @@
-SELECT 
-producto, COUNT(*) AS Cantidad_
+SELECT *
 FROM {{ ref('Compras') }}
-group by producto
