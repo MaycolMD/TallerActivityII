@@ -1,8 +1,11 @@
 # Búsqueda rápida
 [Preprocesamiento](#preprocesamiento)
+
 [Preguntas](#preguntas)
+
 [Looker Studio](#6-looker-studio)
-[Ejecución Proyecto](#ejecucion-del-proyecto)
+
+[Ejecución Proyecto](#ejecución-del-proyecto)
 
 # Análisis de Precios en el Mercado Local
 
