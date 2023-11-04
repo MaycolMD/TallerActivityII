@@ -71,8 +71,17 @@ models:
       - name: fecha
         description: "Fecha de la compra"
 
-  - name: comprobacion
-    description: "Comprueba si la tabla actual contiene campos nulos en alguna de sus columnas"
+  - name: comprobacionOlimpica
+    description: "Comprueba si la tabla Olimpica contiene campos nulos en alguna de sus columnas"
+
+  - name: comprobacionExito
+    description: "Comprueba si la tabla Exito contiene campos nulos en alguna de sus columnas"
+
+  - name: comprobacionClientes
+    description: "Comprueba si la tabla Clientes contiene campos nulos en alguna de sus columnas"
+
+  - name: comprobacionCompras
+    description: "Comprueba si la tabla Compras contiene campos nulos en alguna de sus columnas"
 
   - name: cantidadTotal
     description: "Suma la cantidad de productos en la tabla Olimpica, referente a los productos de Olimpica"
@@ -97,3 +106,60 @@ models:
 
   - name: productos
     description: "Total de productos de ambas tiendas con su información"
+
+  - name: punto5
+    description: "Solución al punto 5. Productos que nunca han sido comprados"
+
+  - name: cruceProductos
+    description: "Productos de vino tinto con sus cantidades compradas y su información, incluyendo gasto, que es cantidadComprada * precio"
+
+  - name: promedio
+    description: "Promedio de compras de vino tinto entre todas las variantes de vino tinto disponibles"  
+    
+  - name: vinoTintoAmbos
+    description: "Unión de los productos de vino tinto de ambas tiendas"
+
+  - name: vinoTintoExi
+    description: "productos de vino tinto de Éxito"
+  
+  - name: vinoTintoOli
+    description: "productos de vino tinto de Olímpica"
+
+  - name: punto1
+    description: "Solución al punto 1. Promedio de compras de vino tinto"
+
+  - name: comprasTotales
+    description: "Total de compras en la tabla histórica"
+
+  - name: preciosExito
+    description: "Total de precios de éxito por código de producto"
+
+  - name: preciosOlimpica
+    description: "Total de precios de olímpica por código de producto"
+
+  - name: ventasExito
+    description: "Total de ventas de éxito por código de producto"
+
+  - name: ventasOlimpica
+    description: "Total de ventas de olímpica por código de producto"
+
+  - name: ventasTotales
+    description: "Total de ventas totales en ambas tiendas"
+
+  - name: punto2
+    description: "Solución al punto 2. Compradores destacados en Olímpica y Éxito"
+
+  - name: comprasExito
+    description: "Total de compras, obtenidas de la tabla Compras, pertenecientes a Éxito"
+
+  - name: comprasOlimpica
+    description: "Total de compras, obtenidas de la tabla Compras, pertenecientes a Olímpica"
+
+  - name: punto3
+    description: "Solución al punto 3. Clientes que han comprado en Olímpica pero no en Éxito"
+
+  - name: cruceInformacion
+    description: "Cruce de tablas para juntar el número de compras de cada producto con su información"
+
+  - name: punto4
+    description: "Ordenar por frecuencia los productos principales más comprados, de mayor a menor cantidad de compras. Limitado al TOP 10"
