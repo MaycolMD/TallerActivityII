@@ -1,3 +1,6 @@
+# Búsqueda rápida
+[Preprocesamiento](#preprocesamiento)
+
 # Análisis de Precios en el Mercado Local
 
 El proyecto actual se centra en el análisis de variables de interés alrededor de dos marcas importantes en el mercado local. Hablamos de Éxito y Olímpica. Asimismo, se planea usar la información proporcionada para realizar consultas de valor relacionadas con este negocio. Todos los procesos y operaciones involucradas en este proyecto serán desarrolladas exclusivamente a través de Data Build Tool.
@@ -6,7 +9,7 @@ El proyecto actual se centra en el análisis de variables de interés alrededor 
 
 El objetivo principal de este proyecto es analizar los precios de productos en las tiendas Olimpica y EXITO, responder a preguntas de negocio específicas y crear un panel de control en Looker Studio para visualizar los resultados.
 
-## Instrucciones
+## Preprocesamiento
 
 ### 1. Migración de Datos a BigQuery
 
