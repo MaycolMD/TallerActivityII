@@ -131,6 +131,7 @@ para ejecutar únicamente la carpeta deseada:
 ```
 
 Para ver la documentación del proyecto más detallada,
+
 Para generarla
 ```bash
     dbt docs generate
