@@ -2,7 +2,7 @@
 [Preprocesamiento](#preprocesamiento)
 [Preguntas](#preguntas)
 [Looker Studio](#6-looker-studio)
-[Ejecución Proyecto](#ejecuion-del-proyecto)
+[Ejecución Proyecto](#ejecucion-del-proyecto)
 
 # Análisis de Precios en el Mercado Local
 
