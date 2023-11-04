@@ -46,19 +46,48 @@ Se realizará la imputación de valores faltantes en los conjuntos de datos util
 # Preguntas
 
 ## 1. Gasto Promedio: ¿Cuál es el gasto promedio en "Vino Tinto" en las tiendas Olimpica y EXITO?
-Para calcular el gasto promedio de "Vino Tinto" se uso un código SQL que usa dos tablas temporales para extraer los códigos y precios de productos que contienen la cadena "Vino Tinto" de las tablas "Olimpica_IMP" y "Exito", respectivamente. Después, se crea una tabla temporal que combina los resultados de las tablas "vinoTintoOli" y "vinoTintoExi", utilizando la operación "UNION ALL" dando como resultado un conjunto de datos que contiene todos los productos "Vino Tinto", con sus códigos y precios de ambas tiendas. Una vez hecho eso, se crea una tabla temporal que realiza un conteo de la cantidad de compras por producto en la tabla "Compras". Esto proporciona información sobre cuántas veces se ha comprado cada producto.
 
-Se continúa con la creación de una tabla temporal que realiza un JOIN entre las tablas "vinoTintoAmbas" y "compras", utilizando el identificador primario del Producto, el cual es apuntado por la llave foránea de Compras (producto y Codigo, respectivamente). También calcula el total gastado en cada producto multiplicando la cantidad de compras por el precio. Además, determina el almacén ("Olimpica" o "EXITO") al que pertenece cada producto según el código, finalmente se realiza un cálculo del gasto promedio por almacén utilizando operaciones de ventana. Para cada fila en "promedio", se calcula el gasto promedio utilizando la función SUM(total) OVER (particion_almacen) para sumar el gasto total en productos en el mismo almacén y la función SUM(cantidad) OVER (particion_almacen) para sumar la cantidad total de compras en productos en el mismo almacén. Esto se hace en una partición definida por el almacén.
+Para abordar esta pregunta, se llevó a cabo un proceso de análisis que involucró varias etapas clave:
+
+Filtrado de Productos de 'Vino Tinto' en Olimpica y Éxito:
+
+En primer lugar, tenindo los dos conjuntos de datos separados, uno la de tienda "Olimpica" y otro de la tienda "Éxito", con la infromacion sobre los productos. Se crearon dos nuevos conjuntos denominados "Vino_Tinto_OLI" y "Vino_Tinto_EXI", que contebuab la informacion de los vinos tintos de cada tienda respectivamente.
+
+Consolidación de Productos de 'Vino Tinto':
+
+Posteriormente, los productos de "Vino Tinto" de ambas tiendas se unieron en una única tabla llamada "VinoTintoAmbos". Esta tabla contenía la información de productos de "Vino Tinto" tanto de Olimpica como de Éxito.
+
+Calcular promedio del gasto del 'Vino Tinto':
+
+Para poder saber el promedio del gasto se tiene que conocer el gasto total, se cruzo la cantidad de Vino Tinto comprado, es decir la informacion que esta en "VinoTintoAmbos", con el precio y las compras hechas, información que se encontraba en la tabla "compras" y una vez con eso se calculo el promedio del gasto en el Vino Tinto.
+
+Finalmente promedio por almacen:
+
+Ya con toda la informacion obtenida se agruparon los datos por almacen respondiendo la pregunta de cual es el gasto medio de Vino Tinto por almacen.
 
 ## 2. Principales Compradores: ¿Quiénes son los compradores destacados en las tiendas Olimpica y EXITO?
 
-Para responder esta pregunta se utilizo un código SQL el caul calcula el total de compras realizadas por cada cliente en las tiendas Olimpica y Exito, y presenta los resultados para los 20 principales clientes con las compras más altas. 
+Para abordar esta pregunta y identificar a los compradores destacados en las tiendas Olimpica y Éxito, se siguió un proceso analítico que involucró las siguientes etapas clave:
 
-Se inicia con una consulta llamada "Prices" que combina los datos de precios de los productos de las tiendas Olimpica y Exito en una sola tabla. Esto se logra utilizando la cláusula UNION ALL.
+Obtención de Precios de Productos en Olimpica y Éxito:
 
-Luego, se crea otra consualta llamada "Ventas" que se utiliza para unir los datos de compras de los clientes con los datos de precios de los productos. La unión se realiza mediante la coincidencia de los códigos de productos en las compras con los códigos de productos en la tabla "Prices". Esto proporciona información sobre el precio de compra de cada producto.
+En primer lugar, partiendo de dos conjuntos de datos separados, uno para la tienda "Olimpica" y otro para "Éxito". De estos conjuntos se extrajeron dos muevos, denominados "Prices_O" y "Prices_E" respectivamente, que contenían información sobre los códigos y precios de los productos disponibles en cada una de las tiendas.
 
-Finalmente, se realiza la consulta principal. Calcula la suma total de compras ("SUM(v.Precio)") para cada cliente ("v.cliente") en la CTE "Ventas". Luego, los resultados se agrupan por cliente utilizando la cláusula "GROUP BY". El resultado muestra el total de compras para cada cliente y se ordena en orden descendente ("ORDER BY Compras_Totales DESC") para identificar a los 20 principales clientes con las compras más altas.
+Asociación de Precios con Compras:
+
+Luego, se analizaron las compras de los clientes en la tabla "Compras". Se crearon dos tablas separadas, "Ventas_O" y "Ventas_E", que contenían información sobre los clientes y los precios asociados a sus compras en Olimpica y Éxito. Esto se logró mediante la combinación de la tabla de compras con las tablas de precios correspondientes.
+
+Consolidación de Compras de Ambas Tiendas:
+
+Se creó una tabla llamada "Ventas_totales" que combinó las compras de ambas tiendas (Olimpica y Éxito). Esta tabla contenía información de todas las compras realizadas en ambas tiendas y se utilizó para identificar a los compradores destacdos sin importar la tienda en la que realizaron sus compras.
+
+Cálculo de Compras Totales por Cliente:
+
+Se realizó un cálculo del gasto total de cada cliente en todas sus compras, independientemente de la tienda. Esto se hizo mediante la suma de los valores de compra en la tabla "Ventas_totales" para cada cliente.
+
+Identificación de los 10 Compradores Destacados:
+
+Finalmente, se seleccionaron los 10 compradores que realizaron las compras más destacadas, es decir, los que presentaron el gasto total más alto en todas sus compras. Estos compradores se identificaron y se presentaron en orden descendente de acuerdo con sus gastos totales, esto para que este de primero aquel comprador que más compras hizo.
 
 ## 3. Clientes Únicos de Olimpica: ¿Quiénes son los clientes que han realizado compras específicamente en Olimpica pero no en EXITO?
 ## 4. Productos Populares: ¿Cuáles son los productos principales que las personas compran con frecuencia?
