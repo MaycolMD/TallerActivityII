@@ -1,3 +1,4 @@
+{{ config (materialized = "table") }}
 SELECT c.C__digo,CONCAT(c.Nombre, ' ', c.Apellido) as Nombre, c.Celular, c.Edad, SUM(vt.Precio) as Compras_Totales
 FROM {{ ref('ventasTotales') }}  vt 
 INNER JOIN {{ ref('Clientes') }} c ON vt.cliente = c.C__digo
