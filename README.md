@@ -1,5 +1,8 @@
 # Búsqueda rápida
 [Preprocesamiento](#preprocesamiento)
+[Preguntas](#preguntas)
+[Looker Studio](#6-looker-studio)
+[Ejecución Proyecto](#ejecuion-del-proyecto)
 
 # Análisis de Precios en el Mercado Local
 
@@ -70,10 +73,10 @@ Es por esto que para el desarrollo de la pregunta:
 #### 4. Al ser únicamente los productos que no estuvieran en ambas tablas (es decir, los no comprados), se filtró la imagen anterior a aquellos productos que aparecieran únicamente en la tabla Productos y no en la tabla Compras. En palabras sencillas, aquellos productos que no están en el registro de Compras. 
 ![image](https://github.com/MaycolMD/TallerActivityII/assets/68664300/e0e3c0e2-561a-46b7-afb2-631f4548c2e6)
 
-## 6 Looker Studio
+## 6. Looker Studio
 Se construirá un panel de control en Looker Studio para visualizar los resultados de cada una de las preguntas.
 
-## Requisitos
+## Ejecución del Proyecto
 
 Para ejecutar correctamente este proyecto, necesitas seguir los siguientes pasos:
 
