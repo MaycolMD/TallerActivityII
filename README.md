@@ -106,7 +106,10 @@ Es por esto que para el desarrollo de la pregunta:
 ![image](https://github.com/MaycolMD/TallerActivityII/assets/68664300/6d6ea67a-d52f-4026-9554-fe2dc598ced6)
 
 ## 6. Looker Studio
-Se construirá un panel de control en Looker Studio para visualizar los resultados de cada una de las preguntas.
+Se construirá un panel de control en Looker Studio para visualizar los resultados de cada una de las preguntas. El panel desarrollado es el siguiente:
+
+[Looker Studio Dashboard](https://lookerstudio.google.com/reporting/cce78af2-759f-4a20-8951-1cb1a39a563a)
+
 
 ## Ejecución del Proyecto
 
