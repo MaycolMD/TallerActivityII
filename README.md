@@ -90,7 +90,33 @@ Identificación de los 10 Compradores Destacados:
 Finalmente, se seleccionaron los 10 compradores que realizaron las compras más destacadas, es decir, los que presentaron el gasto total más alto en todas sus compras. Estos compradores se identificaron y se presentaron en orden descendente de acuerdo con sus gastos totales, esto para que este de primero aquel comprador que más compras hizo.
 
 ## 3. Clientes Únicos de Olimpica: ¿Quiénes son los clientes que han realizado compras específicamente en Olimpica pero no en EXITO?
+
+Para poder responder esta pregunta, aplicamos la lógica moldeada por la misma. Necesitamos obtener los clientes que SÍ han realizado compras en Olímpica Y NO han realizado compras en Éxito. De forma más específica, necesitamos obtener los códigos de estos clientes, filtrando con las condiciones antes mencionadas.
+#### 1. El primer paso fue distinguir los códigos de productos pertenecientes a Olímpica y los pertenecientes a Éxito.
+En la tabla de Compras pudimos observar que los códigos siguen una regla sencilla. Los códigos que empiezan por 'OLI' pertenecen a productos de Olímpica, mientras que los códigos que comienzan por 'EXI' son pertenecientes a productos de Éxito.
+
+![image](https://github.com/MaycolMD/TallerActivityII/assets/67843249/678379f7-4c5a-42d8-b660-c0b12c033624)
+
+
+#### 2. Luego, aplicamos la condición.
+Primero seleccionamos todos los registros con códigos de producto pertenecientes a Olímpica de la forma antes mencionada. Enseguida aplicamos la condición de excluir los registros de clientes que, además de Olímpica, contengan compras de Éxito.
+
+#### 3. Por último, seleccionamos los códigos de clientes únicos.
+
+#### El resultado de esta consulta es que no hay tales clientes en nuestros datos. Todos los clientes que han comprado en Olímpica también han comprado en Éxito.
+
 ## 4. Productos Populares: ¿Cuáles son los productos principales que las personas compran con frecuencia?
+
+En esta consulta se nos pide obtener los productos que se venden más frecuentemente, por lo que necesitamos obtener la información de los productos (sus códigos) y los datos de las compras. Para ello, el proceso fue el siguiente:
+
+#### 1. Seleccionamos la columna 'producto' de la tabla 'Compras'.
+
+![image](https://github.com/MaycolMD/TallerActivityII/assets/67843249/8625825c-15b0-42e2-bf00-f30191f80594)
+
+
+#### 2. Agrupamos por producto y contamos las veces que aparece cada código del mismo.
+Esto se puede hacer porque en la tabla de 'Compras' cada registro pertenece a la venta de una unidad del producto, por lo que al sumar sus registros obtenemos la cantidad vendida.
+
 
 ## 5. Artículos no Comprados: ¿Qué artículos nunca han sido comprados por los clientes?
 
@@ -109,7 +135,10 @@ Es por esto que para el desarrollo de la pregunta:
 ![image](https://github.com/MaycolMD/TallerActivityII/assets/68664300/6d6ea67a-d52f-4026-9554-fe2dc598ced6)
 
 ## 6. Looker Studio
-Se construirá un panel de control en Looker Studio para visualizar los resultados de cada una de las preguntas.
+Se construirá un panel de control en Looker Studio para visualizar los resultados de cada una de las preguntas. El panel desarrollado es el siguiente:
+
+[Looker Studio Dashboard](https://lookerstudio.google.com/reporting/cce78af2-759f-4a20-8951-1cb1a39a563a)
+
 
 ## Ejecución del Proyecto
 
