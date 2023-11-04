@@ -51,7 +51,7 @@ Para abordar esta pregunta, se llevó a cabo un proceso de análisis que involuc
 
 Filtrado de Productos de 'Vino Tinto' en Olimpica y Éxito:
 
-En primer lugar, tenindo los dos conjuntos de datos separados, uno la de tienda "Olimpica" y otro de la tienda "Éxito", con la infromacion sobre los productos. Se crearon dos nuevos conjuntos denominados "Vino_Tinto_OLI" y "Vino_Tinto_EXI", que contebuab la informacion de los vinos tintos de cada tienda respectivamente.
+En primer lugar, teniendo los dos conjuntos de datos separados, uno la de tienda "Olimpica" y otro de la tienda "Éxito", con la infromacion sobre los productos. Se crearon dos nuevos conjuntos denominados "vinoTintoOli" y "vinoTintoExi", que contenían la informacion de los vinos tintos de cada tienda respectivamente.
 
 Consolidación de Productos de 'Vino Tinto':
 
@@ -59,11 +59,11 @@ Posteriormente, los productos de "Vino Tinto" de ambas tiendas se unieron en una
 
 Calcular promedio del gasto del 'Vino Tinto':
 
-Para poder saber el promedio del gasto se tiene que conocer el gasto total, se cruzo la cantidad de Vino Tinto comprado, es decir la informacion que esta en "VinoTintoAmbos", con el precio y las compras hechas, información que se encontraba en la tabla "compras" y una vez con eso se calculo el promedio del gasto en el Vino Tinto.
+Para poder saber el promedio del gasto se tiene que conocer el gasto total, se cruzó la cantidad de Vino Tinto comprado, es decir la información que está en "VinoTintoAmbos", con el precio y las compras hechas, información que se encontraba en la tabla "compras" y una vez con eso se calculó el promedio del gasto en el Vino Tinto.
 
-Finalmente promedio por almacen:
+Finalmente promedio por almacén:
 
-Ya con toda la informacion obtenida se agruparon los datos por almacen respondiendo la pregunta de cual es el gasto medio de Vino Tinto por almacen.
+Ya con toda la información obtenida se agruparon los datos por almacén respondiendo la pregunta de cuál es el gasto promedio de Vino Tinto por cada uno.
 
 ## 2. Principales Compradores: ¿Quiénes son los compradores destacados en las tiendas Olimpica y EXITO?
 
@@ -71,19 +71,19 @@ Para abordar esta pregunta y identificar a los compradores destacados en las tie
 
 Obtención de Precios de Productos en Olimpica y Éxito:
 
-En primer lugar, partiendo de dos conjuntos de datos separados, uno para la tienda "Olimpica" y otro para "Éxito". De estos conjuntos se extrajeron dos muevos, denominados "Prices_O" y "Prices_E" respectivamente, que contenían información sobre los códigos y precios de los productos disponibles en cada una de las tiendas.
+En primer lugar, partiendo de dos conjuntos de datos separados, uno para la tienda "Olimpica" y otro para "Éxito". De estos conjuntos se extrajeron dos muevos, denominados "preciosOlimpica" y "preciosExito" respectivamente, que contenían información sobre los códigos y precios de los productos disponibles en cada una de las tiendas.
 
 Asociación de Precios con Compras:
 
-Luego, se analizaron las compras de los clientes en la tabla "Compras". Se crearon dos tablas separadas, "Ventas_O" y "Ventas_E", que contenían información sobre los clientes y los precios asociados a sus compras en Olimpica y Éxito. Esto se logró mediante la combinación de la tabla de compras con las tablas de precios correspondientes.
+Luego, se analizaron las compras de los clientes en la tabla "Compras". Se crearon dos tablas separadas, "ventasOlimpica" y "ventasExito", que contenían información sobre los clientes y los precios asociados a sus compras en Olimpica y Éxito. Esto se logró mediante la combinación de la tabla de compras con las tablas de precios correspondientes.
 
 Consolidación de Compras de Ambas Tiendas:
 
-Se creó una tabla llamada "Ventas_totales" que combinó las compras de ambas tiendas (Olimpica y Éxito). Esta tabla contenía información de todas las compras realizadas en ambas tiendas y se utilizó para identificar a los compradores destacdos sin importar la tienda en la que realizaron sus compras.
+Se creó una tabla llamada "ventasTotales" que combinó las compras de ambas tiendas (Olimpica y Éxito). Esta tabla contenía información de todas las compras realizadas en ambas tiendas y se utilizó para identificar a los compradores destacados sin importar la tienda en la que realizaron sus compras.
 
 Cálculo de Compras Totales por Cliente:
 
-Se realizó un cálculo del gasto total de cada cliente en todas sus compras, independientemente de la tienda. Esto se hizo mediante la suma de los valores de compra en la tabla "Ventas_totales" para cada cliente.
+Se realizó un cálculo del gasto total de cada cliente en todas sus compras, independientemente de la tienda. Esto se hizo mediante la suma de los valores de compra en la tabla "ventasTotales" para cada cliente.
 
 Identificación de los 10 Compradores Destacados:
 
