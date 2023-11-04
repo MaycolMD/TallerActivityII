@@ -129,3 +129,13 @@ para ejecutar únicamente la carpeta deseada:
 ```bash
     dbt run -m nombreCarpeta
 ```
+
+Para ver la documentación del proyecto más detallada,
+Para generarla
+```bash
+    dbt docs generate
+```
+Para mostrarla
+```bash
+    dbt docs serve
+```
