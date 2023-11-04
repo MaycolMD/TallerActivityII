@@ -74,7 +74,7 @@ Es por esto que para el desarrollo de la pregunta:
 
 #### 2. Por otro lado, se obtuvieron los productos asociados a Éxito, con toda su información. Asimismo, los productos asociados a Olímpica. Ambas tablas se unieron en una sola llamada Productos. 
 #### 3. Finalmente, se hizo un LEFT JOIN de la tabla Productos con la tabla Compras, para obtener los productos con sus respectivas compras, de esta forma:
-![image](https://github.com/MaycolMD/TallerActivityII/assets/68664300/c71f03d4-a0a2-4b94-990d-a2f62092a597)
+![image](https://github.com/MaycolMD/TallerActivityII/assets/68664300/e6be2f60-b563-4142-803b-4ee729bb2c90)
 
 #### 4. Al ser únicamente los productos que no estuvieran en ambas tablas (es decir, los no comprados), se filtró la imagen anterior a aquellos productos que aparecieran únicamente en la tabla Productos y no en la tabla Compras. En palabras sencillas, aquellos productos que no están en el registro de Compras. 
 ![image](https://github.com/MaycolMD/TallerActivityII/assets/68664300/6d6ea67a-d52f-4026-9554-fe2dc598ced6)
